@@ -1,0 +1,20 @@
+<ion-view view-title="IPR">
+ <!--   <ion-content padding="true" ng-class="{'has-footer': showFooter}">
+        this is my graph :
+
+        <button class="button" ng-click="modal.show()">Open Modal</button>
+
+
+    </ion-content>-->
+
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate  item-icon-right item-thumbnail-left" ng-repeat="ipr in iprs" type="item-text-wrap" href="#/tab/iprCalculos/{{ipr.id}}">
+                <img src={{ipr.image}} style="background:#ffffff; width:80px; height:80px;">
+                <h2>{{ipr.name}}</h2>
+                <p>{{ipr.lastText}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class=" tabs-positive">
+
+  <!-- Conversión Tab -->
+  <ion-tab title="Conversion Units"  icon-off="ion-calculator" icon-on="ion-calculator" href="#/tab/medidas">
+    <ion-nav-view name="tab-units"  animation="slide-left-rigth"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Capacidades Tab -->
+  <ion-tab title="Capacity" icon-off="ion-soup-can-outline" icon-on="ion-soup-can-outline" href="#/tab/capacidades">
+    <ion-nav-view name="tab-capacidades"></ion-nav-view>
+  </ion-tab> 
+
+  <!-- Casing Tab -->
+  <ion-tab title="Casing-Tubing" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/casingTubing">
+    <ion-nav-view name="tab-casingTubing"></ion-nav-view>
+  </ion-tab>
+    <!-- IPR Tab -->
+    <ion-tab title="IPR" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/ipr">
+        <ion-nav-view name="tab-ipr"></ion-nav-view>
+    </ion-tab>
+<!--
+     Calculos Tab
+    <ion-tab title="Calculos" icon-off="ion-calculator" icon-on="ion-calculator" href="#/tab/account">
+        <ion-nav-view name="tab-account"></ion-nav-view>
+    </ion-tab>--> 
+
+    <!-- Herramientas Tab -->
+    <ion-tab title="Herramientas" icon-off="ion-wrench" icon-on="ion-wrench" href="#/tab/herramientas">
+        <ion-nav-view name="tab-herramientas"></ion-nav-view>
+    </ion-tab>
+
+
+
+</ion-tabs>

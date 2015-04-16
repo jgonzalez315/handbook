@@ -1,0 +1,12 @@
+<ion-view view-title="Conversion Units">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate  item-icon-right item-thumbnail-left" ng-repeat="medida in medidas" type="item-text-wrap" href="#/tab/units/{{medida.id}}">
+                <img src={{medida.face}} style="width:50px; height:60px;">
+                <h2>{{medida.name}}</h2>
+                <p>{{medida.lastText}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

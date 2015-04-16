@@ -1,0 +1,9 @@
+<ion-modal-view ng-controller="ModalCtrl">
+    <header class="bar bar-header bar-positive">
+        <h1 class="title">Gráfica IPR {{ipr.name}}</h1>
+        <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
+    </header>
+    <ion-content>
+        <highchart id="chart1" config="chartConfig" class="span10"></highchart>
+    </ion-content>
+</ion-modal-view>

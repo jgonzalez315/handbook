@@ -1,0 +1,86 @@
+<ion-view view-title="{{ipr.name}}">
+    <ion-nav-buttons side="right"> <!-- right -->
+        <button menu-toggle="left" class="button button-icon icon ion-backspace" ng-click="borrar()"></button>
+    </ion-nav-buttons>
+
+    <ion-content class="padding">
+
+        <div class="list card">
+
+            <div class="item item-divider-platform item-positive">
+                Datos requeridos
+            </div>
+            <div  class="item item-input item-select">
+                <span class="input-label">Pr</span>
+                <input   type="number" ng-model="ipr.variables.pr">
+               <select  ng-model="medidas[0].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[0].unidades "   ></select>
+            </div>
+
+
+            <div  class="item item-input item-select">
+                <span class="input-label">Pwf</span>
+                <input  ng-model="ipr.variables.pwf" type="number"  ng-change="calcular(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado)" >
+                <select  ng-model="medidas[0].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[0].unidades "   ></select>
+            </div>
+
+
+            <div ng-show="ipr.id!=0" class="item item-input item-select">
+                <span class="input-label">Pb</span>
+                <input  ng-model="ipr.variables.pb" type="number"  ng-change="calcular(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado)" >
+                <select  ng-model="medidas[0].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[0].unidades "   ></select>
+            </div>
+
+            <div  class="item item-input item-select">
+                <span class="input-label">Caudal</span>
+                <input ng-model="ipr.variables.caudal" type="number"  ng-change="calcular(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado)" >
+                <select  ng-model="medidas[3].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[3].unidades "   ></select>
+            </div>
+
+            <div  class="item item-input item-select">
+                <span class="input-label">Corte de agua</span>
+                <input ng-model="ipr.variables.corteagua" type="number"  ng-change="calcular(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado)" >
+                <select>
+                    <option selected>%</option>
+
+                </select>
+            </div>
+            </div>
+
+        <div class="list card">
+            <div class="item item-divider-platform item-positive">
+                Resultados
+            </div>
+            <span class="input-label" >IP Fluido</span>
+
+            <div  class="item item-input item-select">
+                <input ng-model="ipr.variables.ipfluido" type="number"  ng-change="calcular(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado)" >
+                <select  ng-model="medidasExt[0].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidasExt[0].unidades "   ></select>
+            </div>
+            <span class="input-label">Qmax Fluido</span>
+
+
+            <div  class="item item-input item-select">
+                <input ng-model="ipr.variables.qfluido" type="number"  ng-change="calcular(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado)" >
+                <select  ng-model="medidas[3].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[3].unidades "   ></select>
+            </div>
+            <span class="input-label">IP petróleo</span>
+
+            <div  class="item item-input item-select">
+                <input ng-model="ipr.variables.ippetroleo" type="number"  ng-change="calcular(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado)" >
+                <select  ng-model="medidasExt[0].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidasExt[0].unidades "   ></select>
+            </div>
+            <span class="input-label">Qmax petróleo</span>
+
+            <div  class="item item-input item-select">
+                <input ng-model="ipr.variables.qpetroleo" type="number"  ng-change="calcular(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado)" >
+                <select  ng-model="medidas[3].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[3].unidades "   ></select>
+            </div>
+        </div>
+
+        </div>
+
+        <button class="button button-full button-energized" ng-click="graficar(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado);modal.show()">
+            Graficar
+        </button>
+    </ion-content>
+</ion-view>

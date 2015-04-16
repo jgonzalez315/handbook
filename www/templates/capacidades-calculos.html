@@ -1,0 +1,111 @@
+<ion-view view-title="{{capacidad.name}}">
+
+    <ion-nav-buttons side="right"> <!-- right -->
+        <button menu-toggle="left" class="button button-icon icon ion-backspace" ng-click="borrar()"></button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <img class="imagenTanque" src={{capacidad.image}} style="background:#ffffff; width:200px; height:200px;">
+
+
+        <div class="list">
+            <div ng-show="capacidad.id==4" class="item item-input item-select">
+                <span class="input-label">ID</span>
+                <input ng-model="capacidad.variables.id"   type="number" ng-change="calcular(capacidad.id,medidas[4].seleccionado,medidas[1].seleccionado)" >
+                <select  ng-model="medidas[4].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[4].unidades "   ></select>
+            </div>
+
+
+            <div ng-show="capacidad.id==5" class="item item-input item-select">
+                <span class="input-label">ID Casing</span>
+                <input ng-model="capacidad.variables.idCasing" type="number" ng-change="calcular(capacidad.id,medidas[4].seleccionado,medidas[1].seleccionado)" >
+                <select  ng-model="medidas[4].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[4].unidades "   ></select>
+            </div>
+
+
+
+
+            <div ng-show="capacidad.id==5" class="item item-input item-select">
+                <span class="input-label">OD Tubing</span>
+                <input ng-model="capacidad.variables.odTubing" type="number" ng-change="calcular(capacidad.id,medidas[4].seleccionado,medidas[1].seleccionado)">
+                <select  ng-model="medidas[4].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[4].unidades "  ></select>
+            </div>
+
+        </div>
+
+
+        <div  ng-show="capacidad.id!=4 && capacidad.id !=5" class="item item-input item-select">
+            <span class="input-label">D</span>
+            <input ng-model="capacidad.variables.d" type="number" ng-change="calcular(capacidad.id,medidas[4].seleccionado,medidas[1].seleccionado)">
+            <select  ng-model="medidas[4].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[4].unidades " ></select>
+
+        </div>
+
+
+        <div class="item item-input item-select">
+            <span class="input-label">L</span>
+            <input ng-model="capacidad.variables.l"  type="number"ng-change="calcular(capacidad.id,medidas[4].seleccionado,medidas[1].seleccionado)"  ng-change="calcular(capacidad.id,medidas[4].seleccionado,medidas[1].seleccionado)">
+            <select  ng-model="medidas[4].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[4].unidades "    ></select>
+
+        </div>
+
+
+
+        <div ng-show="capacidad.id==5"  class="item item-input item-select">
+            <span class="input-label">Volumen Anular</span>
+            <input ng-model="capacidad.variables.volumenAnular" type="number"disabled="true"  ng-change="calcular(capacidad.id,medidas[4].seleccionado,medidas[1].seleccionado)">
+            <select  ng-model="medidas[1].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[1].unidades "  ></select>
+
+        </div>
+
+
+
+
+        <div ng-show="capacidad.id == 2 || capacidad.id==3"  class="item item-input item-select">
+            <span class="input-label">B</span>
+            <input ng-model="capacidad.variables.b" type="number">
+            <select>
+                <option selected>ft</option>
+                <option>in</option>
+                <option>om</option>
+                <option>m</option>
+            </select>
+        </div>
+
+
+
+        <div ng-show="capacidad.id!=5" class="item item-input item-select">
+            <span class="input-label">h</span>
+            <input ng-model="capacidad.variables.h" type="number" ng-change="calcular(capacidad.id,medidas[4].seleccionado,medidas[1].seleccionado)">
+            <select  ng-model="medidas[4].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[4].unidades "   ></select>
+        </div>
+
+
+
+        <div ng-show="capacidad.id!=5" class="item item-input item-select">
+            <span class="input-label">Volumen</span>
+            <input ng-model="capacidad.variables.volumen" type="number"disabled="true"  ng-change="calcular(capacidad.id,medidas[4].seleccionado,medidas[1].seleccionado)" >
+            <select  ng-model="medidas[1].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[1].unidades "    ></select>
+
+        </div>
+
+
+
+
+        <div ng-show="capacidad.id!=5" class="item item-input item-select">
+            <span class="input-label">Capacidad</span>
+            <input ng-model="capacidad.variables.capacidad" type="number"disabled="true" >
+            <select>
+                <option selected>%</option>
+
+            </select>
+        </div>
+
+        </div>
+
+
+
+
+
+    </ion-content>
+</ion-view>
+|

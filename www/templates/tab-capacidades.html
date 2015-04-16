@@ -1,0 +1,11 @@
+<ion-view view-title="Capacidades">
+    <ion-content>
+        <a class="item item-complex item-thumbnail-left" ng-repeat="capacidad in capacidades" href="#/tab/capacidadescalculos/{{capacidad.id}}">
+            <div class="item-content">
+                <img src={{capacidad.image}} style="background:#ffffff; width:80px; height:80px;">
+                <h2>{{capacidad.name}}</h2>
+                <p>{{capacidad.lastText}}</p>
+            </div>
+        </a>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,16 @@
+<ion-view view-title="{{medida.name}}">
+
+    <ion-nav-buttons side="right"> <!-- right -->
+        <button menu-toggle="left" class="button button-icon icon ion-backspace" ng-click="borrar()"></button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <ion-list>
+            <ion-item class="item-remove-animate  item-icon-right" ng-repeat="unidad in medida.unidades | orderBy:'id'" " type="item-text-wrap">
+                <label class="item item-input">
+                    <span class="input-label">{{unidad.name}}</span>
+                    <input placeholder="0" ng-model="unidad.value" ng-change="transformar(unidad)" type="number">
+                </label>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
