@@ -27,43 +27,44 @@
             </div>
 
             <div class="item item-input item-select">
-                <span class="input-label">Nominal OD</span>
+                <span class="input-label">Nominal OD (in)</span>
 
                 <select ng-model="seldexterno" ng-options="tuberia for tuberia in dexterno " ng-change="setCombos(tuberiaSeleccionada,tipotuberia,seldexterno,selpeso,selgrado)"  ></select>
 
             </div>
             <div class="item item-input item-select">
-                <span class="input-label">Peso</span>
+                <span class="input-label">Weight (lbs/ft)</span>
                 <select ng-model="selpeso" ng-options="peso for peso in peso "  ng-change="setCombos(tuberiaSeleccionada,tipotuberia,seldexterno,selpeso,selgrado)" ></select>
 
             </div>
             <div class="item item-input item-select">
-                <span class="input-label">Grado</span>
+                <span class="input-label">Grade</span>
                 <select ng-model="selgrado" ng-options="grado for grado in grado "  ng-change="setCombos(tuberiaSeleccionada,tipotuberia,seldexterno,selpeso,selgrado)" ></select>
 
             </div>
-            <div class="item item-input ">
-                <span class="input-label">Nominal ID</span>
-                <input type="tel"  ng-model="nid" disabled="true" style="text-align: right">
+
+            <div class="item ">
+                <span class="input-label" style="position: absolute">Nominal ID (in)</span>
+                <input type="tel"  ng-model="nid" disabled="true" style="text-align: right; float: right ">
 
             </div>
-            <div class="item item-input " >
-                <span class="input-label">Diametro drift</span>
-                <input type="tel" ng-model="drift" disabled="true" style="text-align: right">
+            <div class="item " >
+                <span class="input-label" style="position: absolute">Diameter drift</span>
+                <input type="tel" ng-model="drift" disabled="true" style="text-align: right; float: right ">
 
             </div>
-            <div class="item item-input ">
-                <span class="input-label">Resistencia al colapso</span>
-                <input type="tel" ng-model="resist" disabled="true" style="text-align: right">
+            <div class="item ">
+                <span class="input-label" style="position: absolute">Collapse resist (psi)</span>
+                <input type="tel" ng-model="resist" disabled="true" style="text-align: right; float: right ">
             </div>
-            <div class="item item-input ">
-                <span class="input-label">Internal yield pressure</span>
-                <input type="tel" ng-model="yield" disabled="true" style="text-align: right">
+            <div class="item ">
+                <span class="input-label" style="position: absolute">Internal yield pressure (psi)</span>
+                <input type="tel" ng-model="yield" disabled="true" style="text-align: right; float: right ">
 
             </div>
-            <div class="item item-input ">
-                <span class="input-label">Volumen</span>
-                <input type="tel" disabled="true" ng-model="volumen" style="text-align: right">
+            <div class="item ">
+                <span class="input-label" style="position: absolute">Volume (bl/100 ft)</span>
+                <input type="tel" disabled="true" ng-model="volumen" style="text-align: right; float: right ">
 
             </div>
 

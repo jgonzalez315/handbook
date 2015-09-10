@@ -22,9 +22,9 @@ angular.module('sertecpet.services', [])
                 {
                     id: 1,
                     name: 'psig',
-                    formula: '(value)+ 14.6959',
+                    formula: '(value)- 14.6959',
                     value: null,
-                    formulaVuelta: '(value) - 14.6959'
+                    formulaVuelta: '(value) + 14.6959'
                 },
                 {
                     id: 2,
@@ -48,14 +48,15 @@ angular.module('sertecpet.services', [])
                     formulaVuelta: '(value)/0.07030695497464'
                 },
                 {
-                    id: 6,
+                    id: 5,
                     name: 'atm',
                     formula: '(value)*0.06804596101413',
                     value: null,
                     formulaVuelta: '(value)*0.06804596101413'
                 }
             ]
-        }, {
+        },
+            {
             id: 1,
             name: 'Volume',
             seleccionado:0,
@@ -99,7 +100,8 @@ angular.module('sertecpet.services', [])
                 formulaVuelta: 'value / 158987.2999943'
 
             }]
-        }, {
+        },
+            {
             id: 2,
             name: 'Temperature',
             seleccionado:0,
@@ -120,9 +122,9 @@ angular.module('sertecpet.services', [])
             }, {
                 id: 2,
                 name: '°K',
-                formula: '5/9*(value-32)+273',
+                formula: '(5/9*(value-32))+273',
                 value: null,
-                formulaVuelta: '(((value-2.73)*9)/5)+32'
+                formulaVuelta: '((value-273.15)*9/5)+32'
             }, {
                 id: 3,
                 name: '°R',
@@ -130,7 +132,8 @@ angular.module('sertecpet.services', [])
                 value: null,
                 formulaVuelta: 'value-459.67'
             }]
-        }, {
+        },
+            {
             id: 3,
             name: 'Flow Rate',
             seleccionado:0,
@@ -145,9 +148,9 @@ angular.module('sertecpet.services', [])
             }, {
                 id: 1,
                 name: 'ft3/hour',
-                formula: 'value*0.003899',
+                formula: 'value*0.23394495',
                 value: null,
-                formulaVuelta: 'value/0.003899'
+                formulaVuelta: 'value/0.23394495'
             }, {
                 id: 2,
                 name: 'ft3/day',
@@ -183,7 +186,8 @@ angular.module('sertecpet.services', [])
 
                 }
             ]
-        }, {
+        },
+            {
             id: 4,
             name: 'Length',
             seleccionado:0,
@@ -337,13 +341,13 @@ angular.module('sertecpet.services', [])
         var herramientas = [
             {
                 id: 0,
-                name: 'BOMBA JET DIRECTA',
+                name:"Herramienta 1" ,
                 seleccionado: 0,
                 lastText: 'extra',
-                face: 'images/sleeve.png'
+                face: 'images/jetxt.png'
             }, {
                 id: 1,
-                name: 'BOMBA JET REVERSA',
+                name: 'Herramienta 2',
                 seleccionado: 0,
                 lastText: 'extra',
                 face: 'images/reversa.png'
@@ -351,7 +355,7 @@ angular.module('sertecpet.services', [])
 
             }, {
                 id: 2,
-                name: 'NO-GO',
+                name: 'Herramienta 3',
                 seleccionado: 0,
                 lastText: 'extra',
                 face: 'images/nogo.png'
@@ -359,7 +363,7 @@ angular.module('sertecpet.services', [])
 
             }, {
                 id: 3,
-                name: 'STANDING VALVE',
+                name: 'Herramienta 4',
                 seleccionado: 0,
                 lastText: 'extra',
                 face: 'images/standingvalve.png'
@@ -369,9 +373,20 @@ angular.module('sertecpet.services', [])
         ];
 
 
-        return { 
+        return {
             all: function () {
                 return herramientas;
+            },
+            remove: function (capacidades) {
+                chats.splice(capacidades.indexOf(capacidades), 1);
+            },
+            get: function (herramientaID) {
+                for (var i = 0; i < herramientas.length; i++) {
+                    if (herramientas[i].id === parseInt(herramientaID)) {
+                        return herramientas[i];
+                    }
+                }
+                return null;
             }
         };
     })
@@ -14108,7 +14123,7 @@ angular.module('sertecpet.services', [])
                 id: 1,
                 name: 'Cylinder Horizontal',
                 lastText: 'Horizontal cylinder capacity used by a fluid',
-                image: 'images/tanque_Horiz.png',
+                image: 'images/tanque_Horiz2.png',
                 variables:{
                     d:0,
                     l:0,
@@ -14126,7 +14141,7 @@ angular.module('sertecpet.services', [])
                 id: 2,
                 name: 'Horizontal cylinder with hemispherical ends',
                 lastText: 'Horizontal cylinder capacity hemispherical ends with a fluid used for',
-                image: 'images/tanque3.png',
+                image: 'images/Separador_horiz.png',
                 variables:{
                     d:0,
                     l:0,
@@ -14144,7 +14159,7 @@ angular.module('sertecpet.services', [])
                 id: 3,
                 name: 'Vertical cylinder with hemispherical ends ',
                 lastText: 'Cylinder capacity used with hemispherical ends for fluid',
-                image: 'images/tanque4.png',
+                image: 'images/Separador_vert.png',
                 variables:{
                     d:0,
                     l:0,

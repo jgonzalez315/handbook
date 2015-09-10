@@ -24,7 +24,7 @@
             </div>
 
 
-            <div ng-show="ipr.id!=0" class="item item-input item-select">
+            <div ng-show="ipr.id==2" class="item item-input item-select">
                 <span class="input-label">Pb</span>
                 <input  ng-model="ipr.variables.pb" type="number"  ng-change="calcular(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado)" >
                 <select  ng-model="medidas[0].seleccionado" ng-options="unidad.id as unidad.name for unidad in medidas[0].unidades "   ></select>
@@ -79,8 +79,8 @@
 
         </div>
 
-        <button class="button button-full button-energized" ng-click="graficar(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado);modal.show()">
-            Graficar
+        <button ng-model="habilitado" ng-disabled="habilitarGrafico()" class="button button-full button-energized" ng-click="graficar(ipr.id,medidas[0].seleccionado,medidas[3].seleccionado,medidasExt[0].seleccionado);modal.show()">
+        Graficar
         </button>
     </ion-content>
 </ion-view>

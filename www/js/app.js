@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('sertecpet', ['ionic','highcharts-ng','sertecpet.controllers', 'sertecpet.services','sertecpet.filters'])
+angular.module('sertecpet', ['ionic','ionic.service.core','highcharts-ng','sertecpet.controllers', 'sertecpet.services','sertecpet.filters'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -111,6 +111,16 @@ angular.module('sertecpet', ['ionic','highcharts-ng','sertecpet.controllers', 's
                     'tab-herramientas': {
                         templateUrl: 'templates/tab-herramientas.html',
                         controller: 'HerramientasCtrl'
+                    }
+                }
+            })
+
+            .state('tab.herramientaDetail', {
+                url: '/herramientaDetail/:herramientaID',
+                views: {
+                    'tab-herramientas': {
+                        templateUrl: 'templates/bomba.html',
+                        controller: 'HerramientaCtlr'
                     }
                 }
             })

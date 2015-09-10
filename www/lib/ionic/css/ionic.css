@@ -42,6 +42,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.custom-icon{
+    font-size: 64px;
+    color : red;
+    background-image: url(".../images/ruler.ico");
+}
+
 .ion-alert:before {
   content: "\f101"; }
 
